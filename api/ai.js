@@ -114,7 +114,7 @@ async function luminai(text) {
 module.exports = {
   ragBot,
   degreeGuru,
-  pinecoe,
+  pinecone,
   smartContract,
   blackboxAIChat,
   GPT,
