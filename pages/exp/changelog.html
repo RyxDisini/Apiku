@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Changelog for RYX APIs" />
+  <meta name="author" content="Ryxx" />
+  <title>RYX APIs Changelog</title>
+  <link rel="icon" href="https://telegra.ph/file/f9df5ee4af78f47d9c31a.png" />
+  <link href="https://indrijunanda.github.io/RuangAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://indrijunanda.github.io/RuangAdmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://indrijunanda.github.io/RuangAdmin/css/ruang-admin.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/androidstudio.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <style>
+    .bg-navbar {
+      background-color: #1b1b1b;
+    }
+
+    .sidebar {
+      background-color: #343a40;
+    }
+
+    .sidebar .nav-item .nav-link {
+      color: #000000;
+      /* Mengubah warna teks sidebar menjadi hitam */
+    }
+
+    .sidebar .nav-item .nav-link:hover {
+      background-color: #495057;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-text mx-3">Dokumentasi</div>
+      </a>
+      <hr class="sidebar-divider my-0" />
+      <li class="nav-item active">
+        <a class="nav-link" href="/changelog">
+          <i class="fas fa-fw fa-code"></i>
+          <span>Changelog</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/dashboard">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Dashboard</span></a>
+         <li>
+      <hr class="sidebar-divider" />
+      <div class="sidebar-heading">Features</div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAI" aria-expanded="true" aria-controls="collapseAI">
+          <i class="fas fa-fw fa-search"></i>
+          <span>Artificial Intelligence</span>
+        </a>
+        <div id="collapseAI" class="collapse" aria-labelledby="headingAI" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">AI - Features</h6>
+            <a class="collapse-item" href="/api/ragbot?message=hello">Ragbot</a>
+            <a class="collapse-item" href="/api/degreeguru?message=hai">Degreeguru</a>
+            <a class="collapse-item" href="/api/pinecone?message=hai">Pinecone</a>
+            <a class="collapse-item" href="/api/openai?text=hai">Coming Soon</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDownloader" aria-expanded="true" aria-controls="collapseDownloader">
+          <i class="fas fa-fw fa-download"></i>
+          <span>Downloader</span>
+        </a>
+        <div id="collapseDownloader" class="collapse" aria-labelledby="headingDownloader" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Downloader</h6>
+            <a class="collapse-item" href="/api/tiktok?url=https://vt.tiktok.com/ZSYj9uVGS/">Tiktok</a>
+            <a class="collapse-item" href="/api/igdl?url=YOUR_URL">Instagram</a>
+            <a class="collapse-item" href="/api/spotify?url=YOUR_URL">Spotify</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTools" aria-expanded="true" aria-controls="collapseTools">
+          <i class="fas fa-fw fa-tools"></i>
+          <span>Tools</span>
+        </a>
+        <div id="collapseTools" class="collapse" aria-labelledby="headingTools" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Tools - Feature</h6>
+            <a class="collapse-item" href="/photooxy/shadow?text=Hai">Coming Soon</a>
+          </div>
+        </div>
+      </li>
+      <!-- Islamic Section -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseIslamic" aria-expanded="true" aria-controls="collapseIslamic">
+          <i class="fas fa-fw fa-mosque"></i>
+          <span>Islamic</span>
+        </a>
+        <div id="collapseIslamic" class="collapse" aria-labelledby="headingIslamic" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Islamic Features</h6>
+            <a class="collapse-item" href="/api/quran?surah=1">Quran</a>
+            <a class="collapse-item" href="/api/prayer-times?city=YOUR_CITY">Prayer Times</a>
+            <a class="collapse-item" href="/api/hadith?collection=bukhari">Hadith</a>
+          </div>
+        </div>
+      </li>
+      <!-- Maker Section -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaker" aria-expanded="true" aria-controls="collapseMaker">
+          <i class="fas fa-fw fa-pencil-alt"></i>
+          <span>Maker</span>
+        </a>
+        <div id="collapseMaker" class="collapse" aria-labelledby="headingMaker" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Maker Features</h6>
+            <a class="collapse-item" href="/api/text-to-image?text=YOUR_TEXT">Text to Image</a>
+            <a class="collapse-item" href="/api/image-to-text?image=YOUR_IMAGE_URL">Image to Text</a>
+          </div>
+        </div>
+      </li>
+      <!-- Photooxy Section -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePhotooxy" aria-expanded="true" aria-controls="collapsePhotooxy">
+          <i class="fas fa-fw fa-image"></i>
+          <span>Photooxy</span>
+        </a>
+        <div id="collapsePhotooxy" class="collapse" aria-labelledby="headingPhotooxy" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Photooxy Features</h6>
+<a class="collapse-item" href="/photooxy/shadow?text=YOUR_TEXT">Shadow</a>
+<a class="collapse-item" href="/photooxy/romantic?text=YOUR_TEXT">Romantic</a>
+<a class="collapse-item" href="/photooxy/smoke?text=YOUR_TEXT">Smoke</a>
+<a class="collapse-item" href="/photooxy/burnpapper?text=YOUR_TEXT">Burn Papper</a>
+<a class="collapse-item" href="/photooxy/naruto?text=YOUR_TEXT">Naruto</a>
+<a class="collapse-item" href="/photooxy/lovemsg?text=YOUR_TEXT">Love Message</a>
+<a class="collapse-item" href="/photooxy/msggrass?text=YOUR_TEXT">Message Grass</a>
+<a class="collapse-item" href="/photooxy/glitch?text=YOUR_TEXT">Glitch</a>
+<a class="collapse-item" href="/photooxy/doubleheart?text=YOUR_TEXT">Double Heart</a>
+<a class="collapse-item" href="/photooxy/coffeecup?text=YOUR_TEXT">Coffee Cup</a>
+<a class="collapse-item" href="/photooxy/lovetext?text=YOUR_TEXT">Love</a>
+<a class="collapse-item" href="/photooxy/butterfly?text=YOUR_TEXT">Butterfly</a>
+          </div>
+        </div>
+      </li>
+      <hr class="sidebar-divider" />
+    </ul>
+    <!-- Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top bg-navbar">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <h1 class="h3 mb-0 text-gray-100">RYX APIs</h1>
+          <ul class="navbar-nav ml-auto">
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="https://i.pinimg.com/736x/4b/7e/27/4b7e27dde43758a0544fe9abf6b180b9.jpg" style="max-width: 60px" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Changelog</h1>
+          </div>
+          <!-- Content Row -->
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- Changelog Content -->
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Version 1.0.1 - June 2024</h6>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Added new AI features: <a href="/api/ragbot?message=hello">Ragbot</a> and <a href="/api/degreeguru?message=hai">Degreeguru</a>.</li>
+                    <li>Enhanced Downloader functionalities for TikTok, Instagram, and Spotify.</li>
+                    <li>Introduced new Photooxy features: Shadow Text and Romantic Text.</li>
+                    <li>Fixed bugs related to API response times.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Version 1.0.0 - May 2024</h6>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Initial release of RYX APIs with features including AI integrations, downloaders for social media platforms, and various tools.</li>
+                    <li>Introduced Islamic features: Quran, Prayer Times, and Hadith.</li>
+                    <li>Launched Maker features: Text to Image and Image to Text.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content Row -->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; RYX APIs 2024</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="https://indrijunanda.github.io/RuangAdmin/vendor/jquery/jquery.min.js"></script>
+  <script src="https://indrijunanda.github.io/RuangAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://indrijunanda.github.io/RuangAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://indrijunanda.github.io/RuangAdmin/js/ruang-admin.min.js"></script>
+</body>
+
+</html>
+

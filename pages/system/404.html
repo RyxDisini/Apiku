@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .dinosaur {
+            width: 300px;
+            height: auto;
+            animation: shake 0.5s infinite alternate;
+        }
+        p {
+            color: #666;
+        }
+        @keyframes shake {
+            from {
+                transform: translateX(-5px);
+            }
+            to {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>404 Not Found</h1>
+    <img class="dinosaur" src="https://www.google.com/images/errors/robot.png" alt="Google Dinosaur">
+    <p>Oops! The page you're looking for is not here.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s;
+            height: 100%;
+            overflow: hidden; /* Untuk menghindari scroll saat keyboard muncul */
+        }
+        .header {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .toggle-mode {
+            margin-right: 10px;
+        }
+        .toggle-mode label {
+            cursor: pointer;
+        }
+        .toggle-mode input[type="checkbox"] {
+            display: none;
+        }
+        .toggle-mode .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: grey;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .toggle-mode .switch:before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .toggle-mode input:checked + .switch {
+            background-color: #007bff;
+        }
+        .toggle-mode input:checked + .switch:before {
+            transform: translateX(20px) translateY(-50%);
+        }
+        .chat-container {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 50px); /* Mengurangi tinggi untuk header */
+        }
+        .chat-box {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-bottom: 60px; /* Agar input box tidak menutupi pesan terakhir */
+        }
+        .input-box {
+            padding: 10px;
+            background-color: #f8f9fa;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 20px); /* Mengurangi margin input-box */
+            display: flex;
+            align-items: center;
+        }
+        .input-box input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .input-box button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .message {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .message .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .message .profile img {
+            width: 100%;
+            height: auto;
+        }
+        .message .content {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .message.bot .content {
+            background-color: #bee5eb;
+        }
+        .message.user .content {
+            background-color: #d4edda;
+            align-self: flex-end;
+        }
+        .dark-mode {
+            background-color: #343a40;
+        }
+        .dark-mode .chat-container {
+            background-color: #454d55;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>EmikaAi</h1>
+    <div class="toggle-mode">
+        <label for="dark-mode">ClickMode</label>
+        <input type="checkbox" id="dark-mode" onchange="toggleDarkMode()">
+        <span class="switch"></span>
+    </div>
+</div>
+
+<div class="chat-container">
+    <div class="chat-box" id="chat-box"></div>
+    <div class="input-box">
+        <input type="text" id="user-input" placeholder="Type a message..." onfocus="scrollToBottom()">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+    let darkMode = false;
+
+    function sendMessage() {
+        var userInput = document.getElementById('user-input').value;
+        var chatBox = document.getElementById('chat-box');
+        
+        // Append user message to chat box
+        chatBox.innerHTML += `
+            <div class="message user">
+                <div class="profile">
+                    <img src="https://telegra.ph/file/f9df5ee4af78f47d9c31a.png" alt="User Profile">
+                </div>
+                <div class="content">${userInput}</div>
+            </div>
+        `;
+        
+        // Send user message to server and receive response
+        fetch('/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + apiKey // apiKey is defined in config.js
+            },
+            body: JSON.stringify({
+                message: userInput
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Append bot response to chat box
+            chatBox.innerHTML += `
+                <div class="message bot">
+                    <div class="profile">
+                        <img src="bot_profile.jpg" alt="Bot Profile">
+                    </div>
+                    <div class="content">${data.message}</div>
+                </div>
+            `;
+            scrollToBottom();
+        })
+        .catch(error => console.error('Error:', error));
+        
+        // Clear user input field
+        document.getElementById('user-input').value = '';
+    }
+
+    function toggleDarkMode() {
+        darkMode = !darkMode;
+        var body = document.body;
+        if (darkMode) {
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+        }
+    }
+
+    function scrollToBottom() {
+        var chatBox = document.getElementById('chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+</script>
+
+</body>
+</html>

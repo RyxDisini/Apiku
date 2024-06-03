@@ -1,0 +1,76 @@
+<!-- Created By Ryx -->
+	<!-- Anti Dev -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Ganti 'background.jpg' dengan URL atau path file latar belakang Anda */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            text-align: center;
+            margin-top: 100px;
+            overflow: hidden; /* Mencegah salju keluar dari luar halaman */
+        }
+
+        .snowflake {
+            position: absolute;
+            animation: fall linear infinite;
+            user-select: none; /* Mencegah salju terpilih saat di klik */
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Access Denied</h1>
+    <p>Maaf, halaman ini sedang dalam pengembangan. Silakan coba lagi nanti.</p>
+    <a href="dashboard.html" class="dashboard-link">Kembali ke Dashboard</a>
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>&copy;
+                <h>2024 Ryx APIs, All rights reserved<h>
+              </span>
+            </div>
+          </div>
+        </footer>
+        <!-- Footer -->
+    <!-- JavaScript untuk membuat efek salju -->
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('span');
+            snowflake.innerHTML = '❄'; // Karakter untuk salju
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Durasi animasi antara 2 - 5 detik
+            document.body.appendChild(snowflake);
+
+            // Hapus salju setelah mencapai bawah
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+                createSnowflake();
+            });
+        }
+
+        // Buat salju saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            for (let i = 0; i < 30; i++) {
+                createSnowflake();
+            }
+        });
+    </script>
+</body>
+</html>
