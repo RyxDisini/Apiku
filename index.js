@@ -423,13 +423,13 @@ app.get('/api/butterfly', async (req, res) => {
 /* PEMBATAS */
 // Handle 404 error
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'public', 'pages', 'system', '404.html'));
+  res.status(404).sendFile(path.join(__dirname, 'pages', 'system', '404.html'));
 });
 
 // Handle 500 error
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).sendFile(path.join(__dirname, 'public', 'pages', 'system', 'error.html'));
+  res.status(500).sendFile(path.join(__dirname, 'pages', 'system', 'error.html'));
 });
 
 // Jalankan server
