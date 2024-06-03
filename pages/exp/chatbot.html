@@ -157,7 +157,6 @@
     </div>
 </div>
 
-<script src="config.js"></script>
 <script>
     let darkMode = false;
 
@@ -176,14 +175,13 @@
         `;
         
         // Send user message to server and receive response
-        fetch('/chat', {
+        fetch('https://airyx.vercel.app/api/openai', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + apiKey // apiKey is defined in config.js
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                message: userInput
+                prompt: userInput
             })
         })
         .then(response => response.json())
@@ -194,7 +192,7 @@
                     <div class="profile">
                         <img src="bot_profile.jpg" alt="Bot Profile">
                     </div>
-                    <div class="content">${data.message}</div>
+                    <div class="content">${data.choices[0].text}</div>
                 </div>
             `;
             scrollToBottom();
