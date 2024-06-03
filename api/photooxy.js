@@ -16,7 +16,7 @@ const tema = {
   butterFly: "https://photooxy.com/logo-and-text-effects/butterfly-text-with-reflection-effect-183.html"
 }
 
-async function pShadow(text1) {
+async function Shadow(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.shadow,
@@ -34,7 +34,7 @@ async function pShadow(text1) {
   })
 }
 
-async function pRomantic(text1) {
+async function Romantic(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.romantic,
@@ -52,7 +52,7 @@ async function pRomantic(text1) {
   })
 }
 
-async function pSmoke(text1) {
+async function Smoke(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.smoke,
@@ -70,7 +70,7 @@ async function pSmoke(text1) {
   })
 }
 
-async function pBurnPapper(text1) {
+async function BurnPapper(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.burnPapper,
@@ -88,7 +88,7 @@ async function pBurnPapper(text1) {
   })
 }
 
-async function pNaruto(text1) {
+async function Naruto(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.naruto,
@@ -106,7 +106,7 @@ async function pNaruto(text1) {
   })
 }
 
-async function pLoveMsg(text1) {
+async function LoveMsg(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.loveMsg,
@@ -124,7 +124,7 @@ async function pLoveMsg(text1) {
   })
 }
 
-async function pMsgGrass(text1) {
+async function MsgGrass(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.msgGrass,
@@ -142,7 +142,7 @@ async function pMsgGrass(text1) {
   })
 }
 
-async function pGlitch(text1, text2) {
+async function Glitch(text1, text2) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.Glitch,
@@ -160,7 +160,7 @@ async function pGlitch(text1, text2) {
   })
 }
 
-async function pDoubleHeart(text1) {
+async function DoubleHeart(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.doubleHeart,
@@ -178,7 +178,7 @@ async function pDoubleHeart(text1) {
   })
 }
 
-async function pCoffeCup(text1) {
+async function CoffeCup(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.coffeCup,
@@ -195,7 +195,7 @@ async function pCoffeCup(text1) {
     });
   })
 }
-async function pLoveText(text1) {
+async function LoveText(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST',
       url: tema.loveText,
@@ -212,7 +212,7 @@ async function pLoveText(text1) {
     });
   })
 }
-async function pButterfly(text1) {
+async function Butterfly(text1) {
   return new Promise((resolve, reject) => {
     const options = { method: 'POST', 
       url: tema.butterFly,
