@@ -113,7 +113,7 @@ async function luminai(text) {
 
 module.exports = {
   ragBot,
-  degreGuru,
+  degreeGuru,
   pinecoe,
   smartContract,
   blackboxAIChat,
