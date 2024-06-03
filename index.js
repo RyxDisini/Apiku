@@ -3,7 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const { ragBot,
   degreeGuru,
-  pinecoe,
+  pinecone,
   smartContract,
   blackboxAIChat,
   GPT,
